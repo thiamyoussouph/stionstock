@@ -14,6 +14,10 @@ public class CommandeClienyvalidator {
             errors.add("Veuillez renseigner la date de la vente");
             errors.add("Veuillez renseigner la date de la commande");
             errors.add(" Veuillez renseigner la date de la commande du cliente");
+            errors.add("Veuillez renseigner le client");
+            errors.add("Veuillez renseigner le statut de la vente");
+            errors.add("Veuillez renseigner le montant total de la vente");
+            
             return errors;
         }
       if(StringUtils.hasLength(commandeClientDTO.getCode())){

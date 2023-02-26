@@ -59,7 +59,7 @@ public class ArticleServiceimplementation implements ArticleService {
             log.error("Article CODE is null");
             return null;
         }
-        Optional<Article> article = articleRepository.findByCodeArticle(codeArticle);
+        Optional<Article> article = articleRepository.findByCode(codeArticle);
 
         return  Optional.of(ArticleDTO.fromEntity(article.get())).orElseThrow(() -> new InvalidEntityException("Aucun article avec le CODE = " + codeArticle + "n'a ete trouve dans la BDD", CodeEror.ARTICLE_NOT_FOUND));
     }

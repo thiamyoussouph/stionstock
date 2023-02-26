@@ -1,5 +1,6 @@
 package com.udemy.courudemy.DTO;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.udemy.courudemy.Enteties.Client;
 import com.udemy.courudemy.Enteties.CommandeClients;
 import com.udemy.courudemy.Enteties.LigneCommandeclients;
@@ -31,6 +32,8 @@ public class CommandeClientDTO {
     private Instant dateCommandeClient;
     private EtatsCommande etatsCommande;
     private int identreprise;
+
+
 
     private ClientDTO client;
 

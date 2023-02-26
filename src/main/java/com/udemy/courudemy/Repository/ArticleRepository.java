@@ -8,8 +8,8 @@ import java.util.Optional;
 
 public interface ArticleRepository extends JpaRepository<Article, Integer> {
 
-    Optional<Article> findByCodeArticle(String codearticle);
+    Optional<Article> findByCode(String codearticle);
 
 
-    List<Article> findByCategoriId();
+    List<Article> findByCategoriId( Integer id);
 }

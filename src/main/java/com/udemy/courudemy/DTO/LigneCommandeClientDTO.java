@@ -1,5 +1,6 @@
 package com.udemy.courudemy.DTO;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.udemy.courudemy.Enteties.Article;
 import com.udemy.courudemy.Enteties.CommandeClients;
 import com.udemy.courudemy.Enteties.LigneCommandeclients;
@@ -18,6 +19,8 @@ int identreprise;
     private CommandeClientDTO commandeClients;
     private BigDecimal quantite;
     private BigDecimal prixUnitaire;
+    @JsonIgnore
+    private CommandeClientDTO commandeClient;
 
     public static LigneCommandeClientDTO fromEntity(LigneCommandeclients ligneCommandeclients){
         if(ligneCommandeclients==null){
