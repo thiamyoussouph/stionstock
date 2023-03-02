@@ -1,6 +1,7 @@
 package com.udemy.courudemy.Handerlers;
 
 import com.udemy.courudemy.exeption.EntityNotFoundException;
+import com.udemy.courudemy.exeption.InvalidOperationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -14,12 +15,13 @@ public class RestException extends ResponseEntityExceptionHandler {
     final HttpStatus notFound = HttpStatus.NOT_FOUND;
     final ErrorDto errorDto = ErrorDto.builder()
                 .httpCode(notFound.value())
-                .message(exception.getMessage())
                 .codeEror(exception.getCodeEror())
+                 .message(exception.getMessage())
                 .build();
         return new ResponseEntity<>(errorDto, notFound);
     }
-    @ExceptionHandler(EntityNotFoundException.class)
+
+    @ExceptionHandler(InvalidOperationException.class)
     public ResponseEntity<ErrorDto> handleInvalidEntityException(EntityNotFoundException exception, WebRequest request) {
         final HttpStatus badRequest = HttpStatus.BAD_REQUEST;
         final ErrorDto errorDto = ErrorDto.builder()

@@ -88,7 +88,7 @@ public class CommandeFrniseurimplement  implements CommandeFornisuerService{
         }
         return commandeFournisuerrepository.findById(id)
                 .map(CommandeFournisseurDTO::fromEntity)
-                .orElseThrow(() -> new InvalidEntityException("Aucune commande fournisseur avec l'ID = " + id + " n'a été trouvé dans la BDD", CodeEror.COMMANDE_FOURNISSEUR_NOT_FOUND));
+                .orElseThrow(() -> new InvalidEntityException("Aucune commande fournisseur avec l'ID = " + id + " n'a été trouvé dans la BDD", CodeEror.COmmande_fournisseur_inconue));
     }
 
     @Override
