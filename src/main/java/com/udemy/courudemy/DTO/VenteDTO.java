@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 
 import java.time.Instant;
+import java.util.List;
 
 @Data
 @Builder
@@ -14,6 +15,7 @@ public class VenteDTO {
     private Instant dateVente;
     private String commentaire;
     private int identreprise;
+    private List<LigneVenteDTO> ligneventes;
     public static VenteDTO fromEntity(Ventes ventes){
         if(ventes==null){
             return null;

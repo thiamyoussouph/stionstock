@@ -104,6 +104,11 @@ public class CommandeFrniseurimplement  implements CommandeFornisuerService{
 
     @Override
     public void delete(Integer id) {
+        if (id == null) {
+            log.error("CommandeFournisseur ID is null");
+            return;
+        }
+        commandeFournisuerrepository.deleteById(id);
 
     }
 }
